@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, createContext } from 'react';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App.jsx';
-import { createContext } from 'react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -14,18 +13,22 @@ const AppWrapper = () => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState({})
   const [isOpen, setIsOpen] = useState("none")
+  const [homeLoading, setHomeLoading] = useState(false);
+  const [contextMenu, setContextMenu] = useState({
+    visible: false,
+    x: 0,
+    y: 0,
+  });
 
   return (
     <Context.Provider
       value={{
-        isAuth,
-        setIsAuth,
-        loading,
-        setLoading,
-        user, 
-        setUser,
-        isOpen,
-        setIsOpen,
+        isAuth, setIsAuth,
+        loading, setLoading,
+        user, setUser,
+        isOpen, setIsOpen,
+        contextMenu, setContextMenu,
+        homeLoading, setHomeLoading
       }}>
       <App />
     </Context.Provider>
@@ -35,6 +38,5 @@ const AppWrapper = () => {
 root.render(
   <React.StrictMode>
     <AppWrapper />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

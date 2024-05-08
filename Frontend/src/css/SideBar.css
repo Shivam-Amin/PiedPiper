@@ -9,14 +9,14 @@
 }
 
 #uploadBtn {
-  background-color: transparent;
-  width: 140px;
   display: flex;
+  cursor: pointer;
+  width: 125px;
+  height: 62px;
   border: none;
   align-items: center;
-  cursor: pointer;
-  height: 50px;
-  border-radius: 30px;
+  background-color: rgb(237, 241, 250);
+  border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   justify-content: center;
@@ -199,135 +199,4 @@
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
-}
-
-
-/* ---------- Model css for Upload pop-up ---------------------- */
-.upload-box > p {
-  text-align: center;
-  font-weight: 500;
-  margin: 10px;
-}
-
-.icon {
-  width: 100%;
-  height: 90px;
-}
-
-.upload-box {
-  width: 100%;
-  height: 100vh;
-  /* background-color: #fff; */
-  /* border-radius: 5px; */
-  /* padding: 15px; */
-  /* box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05); */
-}
-
-.upload-box form {
-  height: 170px;
-  display: flex;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 5px;
-  border: 2px dashed rgb(166, 22, 166);
-}
-
-form:where(i, p) {
-  color: #0086fe;
-}
-
-form i {
-  font-size: 50px;
-}
-form p {
-  margin-top: 15px;
-  font-size: 16px;
-}
-
-.upload-box .file-box {
-  height: calc(100vh - 555px);
-  overflow-y: scroll;
-  background-color: transparent;
-}
-
-section .row {
-  margin-bottom: 10px;
-  background-color: #dee2e8;
-  list-style: none;
-  padding: 5px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-section .row .icon {
-  color: #5f6368;
-  width: 34px;
-  height: 34px;
-}
-.loading-area .row .content {
-  width: 100%;
-  margin-left: 15px;
-}
-.loading-area .details {
-  display: flex;
-  /* align-items: center; */
-  justify-content: space-between;
-  flex-direction: column;
-  margin-bottom: 7px;
-}
-section .details span {
-  font-size: 12px;
-}
-section .details div {
-  margin-top: 1px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.loading-area .content .loading-bar {
-  width: 100%;
-  height: 6px;
-  margin-bottom: 4px;
-  background-color: #fff;
-  border-radius: 30px;
-}
-
-.content .loading-bar .loading {
-  height: 100%;
-  width: 10%;
-  background-color: #0086fe;
-  border-radius: inherit;
-}
-
-.uploaded-area {
-  /* position: relative; */
-  overflow-y: scroll;
-}
-.uploaded-area.onprogress {
-  max-height: 150px;
-}
-.uploaded-area::-webkit-scrollbar {
-  width: 0px;
-}
-.uploaded-area .row .content {
-  display: flex;
-  align-items: center;
-}
-.uploaded-area .row .details {
-  display: flex;
-  flex-direction: column;
-  margin-left: 15px;
-}
-.uploaded-area .row .details .size {
-  color: #404040;
-  font-size: 11px;
-}
-.uploaded-area .icon {
-  font-size: 16px;
 }

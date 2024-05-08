@@ -2,8 +2,8 @@
 export default (sequelize, Sequelize) => {
   const FileSystem = sequelize.define("FileSystem", {  
     _id: {
-      type: Sequelize.UUID,
-      defaultValue: Sequelize.UUIDV4, // Or you can use `defaultValue: uuidv4()`
+      type: Sequelize.STRING,
+      // defaultValue: Sequelize.UUIDV4, // Or you can use `defaultValue: uuidv4()`
       primaryKey: true,
     },
     name: { 
@@ -15,7 +15,7 @@ export default (sequelize, Sequelize) => {
       }
     },
     parentId: {
-      type: Sequelize.UUID,
+      type: Sequelize.STRING,
       references: {
         model: 'file_system', // Assuming your User model is named 'User'
         key: '_id'   // column name.
@@ -24,7 +24,7 @@ export default (sequelize, Sequelize) => {
     },
     isFolder: {
       type: Sequelize.BOOLEAN,
-      default: false,
+      defaultValue: false,
     },
     userId: {
       type: Sequelize.UUID,
@@ -33,6 +33,21 @@ export default (sequelize, Sequelize) => {
         model: 'users', // Assuming your User model is named 'User'
         key: '_id'   // column name.
       }
+    },
+    url: {
+      type: Sequelize.STRING,
+      allowNull: true,
+      defaultValue: null,
+    },
+    publicId: {
+      type: Sequelize.STRING,
+      allowNull: true,
+      defaultValue: null,
+    },
+    resourceType: {
+      type: Sequelize.STRING,
+      allowNull: true,
+      defaultValue: null,
     },
     createdAt: {
       type: Sequelize.DATE,

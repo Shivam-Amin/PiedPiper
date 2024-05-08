@@ -1,45 +1,11 @@
 #container {
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   /* width: 100%; */
-  border-top-left-radius: 1vw;
   background-color: #ffffff;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 120px);
   width: 100%;
-}
-
-#header__container {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid silver;
-  padding: 5px 10px 5px 1rem;
-  /* padding-left: 1rem; */
-}
-
-#header__container p {
-  font-size: 21px;
-  width: 90%;
-}
-
-#header__container button {
-  background-color: transparent;
-  height: 40px;
-  border-radius: 50%;
-  width: 40px;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  border: none;
-}
-
-#header__container button:hover {
-  transition: 0.3s;
-  background-color: whitesmoke;
-}
-
-#header__container button img {
-  height: 20px;
 }
 
 .nav__container {
@@ -66,3 +32,33 @@
   padding: 15px 15px 0;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form > .container2 input {
+  /* border-color: #d9d6d6; */
+  /* border: 0.1px solid; */
+  margin-top: 1rem;
+}
+
+.form button{
+  outline: none;
+  border: none;
+  background-color:rgb(3, 182, 48);
+  color: #ffff;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 16px;
+  width: 100%;
+  transition: 100ms;
+  cursor: pointer;
+}
+
+.form .errMsg {
+  font-size: 10px;
+  margin: 2px 0 10px 2px;
+  color: red;
+}

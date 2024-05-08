@@ -12,6 +12,7 @@ export const app = express();
 // Using Middlewares
 app.use(express.json());
 app.use(cookieParser());
+// app.use(express.raw({ type: 'application/octet-stream' }));
 app.use(cors({
   origin: [process.env.FRONTEND_URL],
   methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],

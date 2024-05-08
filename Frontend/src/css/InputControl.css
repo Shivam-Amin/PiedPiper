@@ -3,21 +3,21 @@
     flex-direction: column;
     gap: 8px;
 }
-.container label{
+.container2 label{
     font-weight: 500;
     font-size: 0.9rem;
     color: #4b4b4b;
 }
-.container input{
+.container2 input{
     border-radius: 5px;
     border: 1px solid #eee;
     outline: none;
     padding: 8px 15px;
     color: #000;
 }
-.container input :hover{
+.container2 input :hover{
     border-color: #ccc;
 }
-.container input:focus{
+.container2 input:focus{
     border-color: #9900ff;
 }

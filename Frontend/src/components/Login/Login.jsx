@@ -1,8 +1,7 @@
 import React,{ useContext, useState } from 'react'
 import '../../css/Login.css'
 import InputControl from '../InputControl/InputControl.jsx'
-import { Link, Navigate } from 'react-router-dom'
-// import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate, Navigate } from 'react-router-dom'
 // import { signInWithEmailAndPassword } from "firebase/auth";
 // import { auth } from "../../firebase";
 import { toast } from 'react-hot-toast';
@@ -10,7 +9,7 @@ import { Context, server } from '../../index.js';
 import axios from 'axios';
 
 const Login = () => {
-  // const navigate = useNavigate(); 
+  const navigate = useNavigate(); 
 
   const {isAuth, setIsAuth, loading, setLoading} = useContext(Context);
   const [email, setEmail] = useState("");
@@ -43,17 +42,20 @@ const Login = () => {
       toast.success(data.message)
       setErrorMsg("");
       setIsAuth(true)
-      setLoading(false);
     } catch (error) {
       toast.error(error.response.data.message);
       setErrorMsg(error.response.data.message);
       setIsAuth(false)
+    } finally {
       setLoading(false);
     }
   };
 
   // If the user is authenticated, navigate to the main page.
-  if (isAuth) return <Navigate to={'/'} />
+  // if (isAuth) {
+  //   navigate('/');
+  //   return;
+  // }
 
   return (
     <div className='container'>
@@ -65,7 +67,7 @@ const Login = () => {
         <h1 className='heading'>Login</h1>
 
         <InputControl 
-          tyep="text"
+          type="text"
           label="Email" 
           placeholder="Enter email address"
           onChange={(e) => setEmail(e.target.value)}/>
