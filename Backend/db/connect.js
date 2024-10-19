@@ -1,5 +1,9 @@
 import { createConnection } from 'mysql2'
+import {config} from 'dotenv';
 
+config({ 
+  path: '../.env' 
+});
 const connection = createConnection({
   host: process.env.MYSQL_HOST,
   user: process.env.MYSQL_USER,
